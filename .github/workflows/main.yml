@@ -20,11 +20,18 @@ jobs:
       - run: |
           cd build/web
           git init
-          git config --global user.email "jeanpaulmosquera1996@hotmail.com"
-          git config --global user.name "Jean Paul Mosquera"
-          git config --global init.defaultBranch main
-          git remote set-url origin https://x-access-token:${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git
-          git branch -m gh-pages
-          git add --all
-          git commit -m "update"
-          git push -u origin gh-pages -f
+          git config user.name "github-actions"
+          git config user.email "
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          //main is the branch where the website is hosted
+          git push --force --quiet "https://${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git" master:gh-pages
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.commit_secret }}
+          BRANCH: gh-pages
+          FOLDER: build/web
+          CLEAN: true
+          
