@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "Jean Paul Mosquera"
           git config --global init.defaultBranch main
           git remote set-url origin https://x-access-token:${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git
-          git checkout -b gh-pages
+          git branch -m gh-pages
           git add --all
           git commit -m "update"
           git push -u origin gh-pages -f
