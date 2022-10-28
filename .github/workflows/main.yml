@@ -24,9 +24,11 @@ jobs:
           git config user.email "
           git add .
           git commit -m "Deploy to GitHub Pages"
-          //main is the branch where the website is hosted
-          git push --force --quiet "https://${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git" master:gh-pages
-
+          git push --force --quiet "https://${{
+            secrets.GITHUB_TOKEN
+          }}@github.com/${{
+            github.repository
+          }}.git" master:gh-pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
