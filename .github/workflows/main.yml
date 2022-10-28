@@ -22,6 +22,7 @@ jobs:
           git init
           git config --global user.email "jeanpaulmosquera1996@hotmail.com"
           git config --global user.name "Jean Paul Mosquera"
+          git config --global init.defaultBranch main
           git remote set-url origin https://x-access-token:${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git
           git checkout -b gh-pages
           git add --all
