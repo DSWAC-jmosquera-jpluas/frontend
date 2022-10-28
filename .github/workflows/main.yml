@@ -1,39 +1,21 @@
-name: Flutter Web
+name: Flutter Web deploy on github pages
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    name: Build Web
-    env:
-      my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: britannio/action-install-flutter@v1.1
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
         with:
-          channel: 'dev'
-      - run: flutter config --enable-web
+          channel: 'beta'
       - run: flutter pub get
-      - run: flutter build web --release
-      - run: |
-          cd build/web
-          git init
-          git config user.name "github-actions"
-          git config user.email "
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push --force --quiet "https://${{
-            secrets.GITHUB_TOKEN
-          }}@github.com/${{
-            github.repository
-          }}.git" master:gh-pages
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - run: flutter build web
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.commit_secret }}
-          BRANCH: gh-pages
-          FOLDER: build/web
-          CLEAN: true
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+    
+  
