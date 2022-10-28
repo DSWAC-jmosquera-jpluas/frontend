@@ -21,7 +21,7 @@ jobs:
           cd build/web
           git init
           git config --global user.email jeanpaulmosquera1996@hotmail.com
-          git config --global user.name jeanm1996
+          git config --global user.name JeanM1996
           git config --global init.defaultBranch main
           git status
           git remote add origin https://${{secrets.commit_secret}}@github.com/DSWAC-jmosquera-jpluas/frontend.git
