@@ -36536,7 +36536,7 @@ while(true)switch(s){case 0:p=t.N
 s=3
 return A.a_(A.aob(A.tn("20.63.79.173","/CitaMedica/GetAll",5000,"http"),A.ax(["Accept","application/json","Access-Control_Allow_Origin","*"],p,p)),$async$ql)
 case 3:o=c
-if(o.b===200){q=J.tE(B.b0.d2(0,A.ao2(A.an9(o.e).c.a.h(0,"charset")).d2(0,o.w)),new A.RS(),t.g_).eD(0)
+if(o.b===201){q=J.tE(B.b0.d2(0,A.ao2(A.an9(o.e).c.a.h(0,"charset")).d2(0,o.w)),new A.RS(),t.g_).eD(0)
 s=1
 break}else{q=A.a([],t.ed)
 s=1
