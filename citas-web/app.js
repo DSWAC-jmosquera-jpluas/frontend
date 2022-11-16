@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
         var request = require('request');
         var options = {
             'method': 'POST',
-            'url': 'https://webapicitamedicaunl.azurewebsites.net/Audit',
+            'url': 'http://20.63.79.173:5000/Audit',
             'headers': {
                 'Content-Type': 'application/json'
             },
