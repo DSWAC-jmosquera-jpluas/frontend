@@ -82,12 +82,8 @@ class ApiService {
 
   //get appoinment by id
   Future<Appoiment> getById(String id) async {
-    var uri = Uri(
-        scheme: "http",
-        host: "20.63.79.173",
-        port: 5000,
-        path: "/CitaMedica/GetById?CitaMedicaId=$id");
-    final response = await http.get(uri);
+    String url = "$baseUrl/CitaMedica/GetById?CitaMedicaId=$id";
+    final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       var jsonResponse = json.decode(response.body);
