@@ -38173,7 +38173,7 @@ while(true)switch(s){case 0:p=t.N
 s=3
 return A.a8(A.asf(A.tG("20.63.79.173","/CitaMedica/GetAll",5000,"http"),A.aB(["Accept","application/json","Access-Control_Allow_Origin","*"],p,p)),$async$rv)
 case 3:o=c
-if(o.b===201){q=J.TP(B.b1.dn(0,A.as5(A.ar9(o.e).c.a.h(0,"charset")).dn(0,o.w)),new A.U4(),t.g_).eK(0)
+if(o.b===200){q=J.TP(B.b1.dn(0,A.as5(A.ar9(o.e).c.a.h(0,"charset")).dn(0,o.w)),new A.U4(),t.g_).eK(0)
 s=1
 break}else{q=A.a([],t.ed)
 s=1
@@ -38185,7 +38185,7 @@ var $async$rK=A.a5(function(c,d){if(c===1)return A.a1(d,r)
 while(true)switch(s){case 0:p=t.N
 s=3
 return A.a8(A.aEy(A.tG("20.63.79.173","/CitaMedica",5000,"http"),B.b1.iM(b.em()),A.aB(["Content-Type","application/json; charset=UTF-8"],p,p)),$async$rK)
-case 3:if(d.b===200){q=!0
+case 3:if(d.b===201){q=!0
 s=1
 break}else{q=!1
 s=1
