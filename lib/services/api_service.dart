@@ -18,7 +18,7 @@ class ApiService {
       "Access-Control_Allow_Origin": "*"
     });
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body);
       return jsonResponse
           .map((appoiment) => Appoiment.fromJson(appoiment))
@@ -39,7 +39,7 @@ class ApiService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: body);
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       return true;
     } else {
       return false;
